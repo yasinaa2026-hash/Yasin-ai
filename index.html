@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6d5dfc">
+  <meta name="description" content="Yasin AI — مساعد ذكاء اصطناعي عام بواجهة أصلية.">
+  <title>Yasin AI</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="app">
+    <aside class="sidebar" id="sidebar" aria-label="الشريط الجانبي">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">Y</div>
+        <div>
+          <strong>Yasin AI</strong>
+          <span>مساعدك الذكي</span>
+        </div>
+      </div>
+
+      <button class="new-chat primary-btn" id="newChatBtn">＋ محادثة جديدة</button>
+
+      <label class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="البحث في المحادثات" aria-label="البحث">
+      </label>
+
+      <nav class="conversation-list" id="conversationList" aria-label="المحادثات"></nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-btn" data-page="settings">⚙ الإعدادات</button>
+        <button class="nav-btn" data-page="help">؟ المساعدة</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="menuBtn" aria-label="فتح القائمة">☰</button>
+        <div class="top-title" id="pageTitle">محادثة جديدة</div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" title="تغيير المظهر" aria-label="تغيير المظهر">◐</button>
+          <button class="icon-btn" id="settingsBtn" title="الإعدادات" aria-label="الإعدادات">⚙</button>
+        </div>
+      </header>
+
+      <section class="content" id="content">
+        <section class="home-view" id="homeView">
+          <div class="hero">
+            <div class="hero-mark">Y</div>
+            <p class="eyebrow">مساعد ذكاء اصطناعي مستقل</p>
+            <h1>مرحبًا بك في <span>Yasin AI</span></h1>
+            <p class="hero-subtitle">اسأل، اكتب، تعلّم، برمج، ولخّص من مساحة واحدة.</p>
+          </div>
+
+          <div class="composer-card">
+            <textarea id="promptInput" rows="4" placeholder="اكتب رسالتك هنا..." aria-label="رسالتك"></textarea>
+            <div class="composer-toolbar">
+              <div class="tool-group">
+                <button class="tool-btn" id="attachBtn">📎 إرفاق</button>
+                <input id="fileInput" type="file" hidden multiple accept=".pdf,.txt,.docx,.csv,.json,.js,.ts,.html,.css,.py,.java,.c,.cpp,.cs,.php,image/*">
+                <button class="tool-btn" id="visionBtn">◉ صورة</button>
+                <select id="modelSelect" aria-label="اختيار النموذج">
+                  <option value="">Yasin AI Smart</option>
+                  <option value="">Yasin AI Fast</option>
+                  <option value="">Yasin AI Reasoning</option>
+                  <option value="">Vision</option>
+                  <option value="">Coding</option>
+                </select>
+              </div>
+              <button class="send-btn" id="sendBtn" aria-label="إرسال">➤</button>
+            </div>
+            <div id="filePreview" class="file-preview" hidden></div>
+          </div>
+
+          <div class="suggestions" id="suggestions">
+            <button data-prompt="اشرح لي هذا الدرس بطريقة سهلة">اشرح لي هذا الدرس</button>
+            <button data-prompt="اكتب لي برنامج JavaScript بسيط">اكتب لي برنامج JavaScript</button>
+            <button data-prompt="لخص النص التالي في نقاط واضحة">لخص هذا النص</button>
+            <button data-prompt="ساعدني في تعلم الإنجليزية">ساعدني في تعلم الإنجليزية</button>
+            <button data-prompt="أنشئ خطة لتعلم البرمجة">خطة لتعلم البرمجة</button>
+          </div>
+        </section>
+
+        <section class="chat-view" id="chatView" hidden>
+          <div class="messages" id="messages" aria-live="polite"></div>
+          <div class="chat-composer">
+            <textarea id="chatInput" rows="2" placeholder="اكتب رسالة..." aria-label="رسالة المحادثة"></textarea>
+            <div class="composer-toolbar">
+              <div class="tool-group">
+                <button class="tool-btn" id="chatAttachBtn">📎</button>
+                <button class="tool-btn" id="stopBtn" hidden>■ إيقاف</button>
+              </div>
+              <button class="send-btn" id="chatSendBtn">➤</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel-view" id="panelView" hidden></section>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
